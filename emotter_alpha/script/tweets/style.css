@@ -1,0 +1,184 @@
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+}
+
+.main {
+	background: #DEF;
+	min-height: 100vh;
+	padding: 0 4px;
+}
+
+.main > .none {
+	max-width: 40em;
+	margin: 1em auto;
+	padding: 1em;
+	border: 1px solid #DDD;
+	background-color: #FFF;
+	text-align: center;
+}
+
+.tweets {
+	background-color: #CCC;
+	margin: 0 auto;
+	max-width: 40em;
+	height: 100%;
+}
+
+.tweets > div {
+	background-color: #FFF;
+	padding: 0.5em 0.8em;
+/*	border : 1px solid #AAA; */
+/*	margin: 0.4em auto; */
+/*	border-radius: 4px; */
+	margin-bottom: 1px;
+}
+
+.tweets > div.rt {
+/*	border : 3px double #AAA; */
+}
+
+.tweets > div > .body {
+	margin: 0;
+}
+
+.tweets span.link {
+	color: #0000BB;
+}
+
+.tweets span.link:hover {
+	color: #8888FF;
+	cursor: pointer;
+}
+
+.tweets > div > .body > i {
+	color: #0000BB;
+}
+
+.tweets > div > .body > i:hover {
+	color: #8888FF;
+	cursor: pointer;
+}
+
+.tweets span.link.user_mentions {
+	margin-right: 0.5em;
+}
+
+.tweets > div > img {
+}
+
+.tweets > div > .head {
+/*	margin-bottom: 0.15em; */
+}
+
+.tweets > div > .head > .user {
+	line-height: 2em;
+	float: left;
+}
+
+.tweets > div > .head > .user > img {
+   width: auto;
+   height: 1.8em;
+   vertical-align: middle;
+   border-radius: 4px;
+}
+
+.tweets > div > .head > .user > .name {
+	font-weight: bolder;
+}
+
+.tweets > div > .head > .user > .name:hover {
+	color: #444;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.tweets > div > .head > .user > .id {
+	color: #444;
+	font-size: 80%;
+}
+
+.tweets > div > .head > .user > .id:hover {
+	color: #888;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.tweets > div .date {
+	color: #666;
+	font-size: 60%;
+	float: right;
+}
+
+.tweets > div .date:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.float-clear {
+	clear: both;
+}
+
+.tweets > div > .body > .text {
+	line-height: 1.2em;
+}
+
+
+.tweets > div > .media {
+	display: none;
+}
+
+.tweets > div > .media.visible {
+	display: block;
+}
+
+.tweets > div > .rt-user {
+	color: #333;
+	font-size: 75%;
+	margin-bottom: 0.2em;
+}
+
+.tweets > div > .rt-user > .name {
+	float: left;
+	color: #444;
+}
+
+.tweets > div > .rt-user > .name:hover {
+	color: #999;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+.tweets > div > .emotes {
+	font-size: 80%;
+}
+
+.tweets > div > .emotes > dl {
+	display: inline-block;
+	margin: 0 0.2em;
+	padding: 1px 4px;
+	border-radius: 4px;
+	border: 1px solid #BBB;
+	text-align: center;
+}
+
+.tweets > div > .emotes > dl.done {
+	background-color: #FFD;
+}
+
+.tweets > div > .emotes > dl:hover {
+	cursor: pointer;
+	background-color: #FFE;
+}
+
+.tweets > div > .emotes > dl > dt {
+	margin: 0;
+	margin-right: 4px;
+	display: inline-block;
+}
+
+.tweets > div > .emotes > dl > dd {
+	margin: 0;
+	display: inline-block;
+}

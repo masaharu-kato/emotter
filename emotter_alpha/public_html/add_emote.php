@@ -1,0 +1,1 @@
+<?php require '../script/emote/add.php'; ?>
