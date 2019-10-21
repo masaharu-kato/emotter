@@ -24,17 +24,17 @@ namespace Twitter\Tweet;
 
 		case 'hashtags':
 			$ctext = $entity->text;
-			$curl = $baseurl.'search?q=%23'.$ctext;
+			$curl = $baseurl.'/search?q=%23'.$ctext;
 			return "<span class=\"link hashtag\" onclick=\"jump('$curl')\">#$ctext</span>";
 
 		case 'symbols':
 			$ctext = $entity->text;
-			$curl = $baseurl.'search?q=$'.$ctext;
+			$curl = $baseurl.'/search?q=$'.$ctext;
 			return "<span class=\"link symbols\" onclick=\"jump('$curl')\">$$ctext</span>";
 
 		case 'user_mentions':
 			$ctext = $entity->screen_name;
-			$curl = $baseurl.$ctext;
+			$curl = $baseurl.'/'.$ctext;
 			return "<span class=\"link user_mentions\" onclick=\"jump('$curl')\">@$ctext</span>";
 
 		case 'urls':
@@ -46,7 +46,7 @@ namespace Twitter\Tweet;
 			return '';
 
 		}
-		
+
 		return '';
 	}
 

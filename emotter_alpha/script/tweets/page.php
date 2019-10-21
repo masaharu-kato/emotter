@@ -9,9 +9,9 @@ namespace Twitter;
 
 	$params = explode('/', $url_dirs_in_app);
 	# if(preg_match('@.*\.php@', $params[1])) $params = array_slice($params, 1);
-	var_dump($params);
+	$fparam = $params[1] ?? '';
 
-	if(!isset($params[1]) || $params[1] == '') {
+	if($fparam == '') {
 		$ret = $twitter->query(
 			'statuses/home_timeline',
 			[
@@ -20,7 +20,7 @@ namespace Twitter;
 			]
 		);
 	}
-	else if($params[1] == 'search') {
+	else if($fparam == 'search') {
 		$ret = $twitter->query(
 			'search/tweets',
 			[
@@ -36,7 +36,7 @@ namespace Twitter;
 		$ret = $twitter->query(
 			'statuses/user_timeline',
 			[
-				'screen_name' => $params[1],
+				'screen_name' => $fparam,
 				'count' => 200,
 				'tweet_mode' => 'extended',
 			]
