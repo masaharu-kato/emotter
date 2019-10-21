@@ -195,6 +195,9 @@ class OAuth {
 
 		$query = $this->getAuthAccessQuery();
 
+		$path = __FILE__.'/tokens/'.$query['user_id'].'.json';
+		file_put_contents($path, json_encode($query));
+
 		$_SESSION['twitter_oauth_access_token'       ] = $query['oauth_token'       ];
 		$_SESSION['twitter_oauth_access_token_secret'] = $query['oauth_token_secret'];
 		$_SESSION['twitter_user_id'    ] =  $query['user_id'    ];

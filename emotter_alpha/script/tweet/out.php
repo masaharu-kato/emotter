@@ -1,7 +1,7 @@
 <?php
 namespace Twitter\Tweet;
 	require_once __DIR__.'/out_text.php';
-	require_once __DIR__.'/../base/connect.php';
+//	require_once __DIR__.'/../base/connect.php';
 	require_once __DIR__.'/../twitter/oauth_required.php';
 	require_once __DIR__.'/../emote/emojies.php';
 
@@ -17,15 +17,15 @@ namespace Twitter\Tweet;
 		return (new \DateTime($value->created_at))->setTimeZone($default_time_zone)->format('Y/m/d H:i:s');
 	}
 
-	function getEmoteNumbers($tweet_id) {
-		global $pdo;
-		$st = $pdo->query("SELECT * FROM emotes WHERE tweet_id = $tweet_id");
+	// function getEmoteNumbers($tweet_id) {
+	// 	global $pdo;
+	// 	$st = $pdo->query("SELECT * FROM emotes WHERE tweet_id = $tweet_id");
 
-		$ret = [];
-		while($row = $st->fetch()) $ret[intval($row['code'])][intval($row['user_id'])] = $row['datetime'];
+	// 	$ret = [];
+	// 	while($row = $st->fetch()) $ret[intval($row['code'])][intval($row['user_id'])] = $row['datetime'];
 
-		return $ret;
-	}
+	// 	return $ret;
+	// }
 
 	function _outTweet($value, $origin) {
 		global $emojies, $twitter;

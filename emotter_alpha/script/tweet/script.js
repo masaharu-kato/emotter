@@ -7,26 +7,27 @@ function emoji_click(self) {
 }
 
 function emoji_submit(self, params) {
-	return loadByAjax('add_emote.php', 'POST', params, function(data){
-	//	削除した
-		let dd;
-		switch(data) {
-		case 'Deleted':
-			self.classList.remove('done');
-			dd = self.getElementsByTagName('dd')[0];
-			dd.innerHTML--;
-			return;
+	window.alert('This feature is not supported.');
+	// return loadByAjax('add_emote.php', 'POST', params, function(data){
+	// //	削除した
+	// 	let dd;
+	// 	switch(data) {
+	// 	case 'Deleted':
+	// 		self.classList.remove('done');
+	// 		dd = self.getElementsByTagName('dd')[0];
+	// 		dd.innerHTML--;
+	// 		return;
 
-		case 'Added':
-			self.classList.add('done');
-			dd = self.getElementsByTagName('dd')[0];
-			dd.innerHTML++;
-			return;
-		}
+	// 	case 'Added':
+	// 		self.classList.add('done');
+	// 		dd = self.getElementsByTagName('dd')[0];
+	// 		dd.innerHTML++;
+	// 		return;
+	// 	}
 
-		alert('Error: ' + data);
-		return;
-	});
+	// 	alert('Error: ' + data);
+	// 	return;
+	// });
 }
 
 function jump(url) {
