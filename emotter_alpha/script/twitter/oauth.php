@@ -112,6 +112,8 @@ class OAuth {
 
 		    return $ret;
 		} catch (\Exception $e) {
+			echo "Warnings in getResponse():<BR>\n";
+			echo $e;
 			return null;
 		}
 	}
