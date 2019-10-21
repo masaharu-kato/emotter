@@ -196,6 +196,7 @@ class OAuth {
 
 		$query = $this->getAuthAccessQuery();
 
+		if (!file_exists(__DIR__.'/tokens')) mkdir(__DIR__.'/tokens');
 		$path = __DIR__.'/tokens/'.$query['user_id'].'.json';
 		file_put_contents($path, json_encode($query));
 
