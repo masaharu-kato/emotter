@@ -9,6 +9,7 @@ namespace Twitter;
 
 	$params = explode('/', $url_dirs_in_app);
 	# if(preg_match('@.*\.php@', $params[1])) $params = array_slice($params, 1);
+	var_dump($params);
 
 	if(!isset($params[1]) || $params[1] == '') {
 		$ret = $twitter->query(

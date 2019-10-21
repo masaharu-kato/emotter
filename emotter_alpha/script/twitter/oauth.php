@@ -175,7 +175,7 @@ class OAuth {
 
 	//	コールバックURLを指定して、APIへ認証を要求する
 		$query = $this->getAuthRequestQuery();
-		if (!($query['oauth_token'] ?? '')) throw \Exception('Failed to generate oauth token.');
+		if(!($query['oauth_token'] ?? '')) throw \Exception('Failed to generate oauth token.');
 
 	//	セッションを開始し、トークンを記憶する
 		session_regenerate_id(true);
