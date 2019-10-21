@@ -72,7 +72,6 @@ class OAuth {
 //	認証情報に署名を追加したものを返す
 	private function getParamsWithSignature() {
 		$this->params['oauth_signature'] = $this->getSignature();
-	//	var_dump($this->params);
 		return $this->params;
 	}
 
@@ -174,7 +173,6 @@ class OAuth {
 
 	//	コールバックURLを指定して、APIへ認証を要求する
 		$query = $this->getAuthRequestQuery();
-		var_dump($query);
 		if (!($query['oauth_token'] ?? '')) throw \Exception('Failed to generate oauth token.');
 
 	//	セッションを開始し、トークンを記憶する
@@ -198,7 +196,7 @@ class OAuth {
 
 		$query = $this->getAuthAccessQuery();
 
-		$path = __FILE__.'/tokens/'.$query['user_id'].'.json';
+		$path = __DIR__.'/tokens/'.$query['user_id'].'.json';
 		file_put_contents($path, json_encode($query));
 
 		$_SESSION['twitter_oauth_access_token'       ] = $query['oauth_token'       ];
