@@ -8,7 +8,7 @@ namespace Twitter;
 	$url_dirs_in_app = substr(strtok($_SERVER["REQUEST_URI"], '?'), strlen($url_dirs_until_app)); 
 
 	$params = explode('/', $url_dirs_in_app);
-	var_dump($params);
+	if(preg_match('@.*\.php@', $params[1])) $params = array_slice($params, 1);
 
 	if($params[1] === '') {
 		$ret = $twitter->query(
