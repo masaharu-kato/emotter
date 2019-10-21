@@ -3,7 +3,7 @@ namespace Twitter\Tweet;
 	require_once __DIR__.'/out_text.php';
 //	require_once __DIR__.'/../base/connect.php';
 	require_once __DIR__.'/../twitter/oauth_required.php';
-	require_once __DIR__.'/../emote/emojies.php';
+//	require_once __DIR__.'/../emote/emojies.php';
 
 	$default_time_zone = new \DateTimeZone('Asia/Tokyo');
 
@@ -28,8 +28,8 @@ namespace Twitter\Tweet;
 	// }
 
 	function _outTweet($value, $origin) {
-		global $emojies, $twitter;
-		$emotes = getEmoteNumbers($value->id);
+	//	global $emojies, $twitter;
+	//	$emotes = getEmoteNumbers($value->id);
 ?>
 		<div class="<?=$origin ? 'rt' : ''?>">
 
@@ -74,6 +74,7 @@ namespace Twitter\Tweet;
 				<?php endif ?>
 			</div>
 
+			<?php /*
 			<div data-tweetid="<?=$value->id?>" class="emotes">
 			<?php foreach($emojies as $key => $value): ?><!--
 			 --><dl data-emojicode="<?=$key?>" onclick="emoji_click(this)"
@@ -86,6 +87,7 @@ namespace Twitter\Tweet;
 				</dl><!--
 		 --><?php endforeach ?>
 			</div>
+			*/ ?>
 
 		</div>
 <?php
