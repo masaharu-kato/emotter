@@ -43,12 +43,8 @@ namespace Twitter;
 	}
 
 	if(isset($ret)) {
-		var_dump($ret);
 		$data = json_decode($ret);
 		if(isset($data->statuses)) $data = $data->statuses;
-
-	}else{
-		echo 'Response is empty.<BR>';
 	}
 
 ?>
