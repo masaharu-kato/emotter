@@ -1,5 +1,6 @@
 <?php
 namespace Twitter\Tweet;
+	require_once __DIR__.'/../base/urls.php';
 
 	function getIndicies($value) {
 		$ret = [];
@@ -17,22 +18,35 @@ namespace Twitter\Tweet;
 	}
 
 	function getEntityText($entity) {
+		$baseurl = SITE_DIR;
+
 		switch($entity->entity_type) {
+
 		case 'hashtags':
-			return "<span class=\"link hashtag\"
-						onclick=\"jump('/search?q=%23{$entity->text}')\">#{$entity->text}</span>";
+			$ctext = $entity->text;
+			$curl = $baseurl.'search?q=%23'.$ctext;
+			return "<span class=\"link hashtag\" onclick=\"jump('$curl')\">#$ctext</span>";
+
 		case 'symbols':
-			return "<span class=\"link symbols\"
-						onclick=\"jump('/search?q=${$entity->text}')\">${$entity->text}</span>";
+			$ctext = $entity->text;
+			$curl = $baseurl.'search?q=$'.$ctext;
+			return "<span class=\"link symbols\" onclick=\"jump('$curl')\">$$ctext</span>";
+
 		case 'user_mentions':
-			return "<span class=\"link user_mentions\"
-						onclick=\"jump('/{$entity->screen_name}')\">@{$entity->screen_name}</span>";
+			$ctext = $entity->screen_name;
+			$curl = $baseurl.$ctext;
+			return "<span class=\"link user_mentions\" onclick=\"jump('$curl')\">@$ctext</span>";
+
 		case 'urls':
-			return "<span class=\"link urls\"
-						onclick=\"new_tab_open('{$entity->expanded_url}')\">{$entity->display_url}</span>";
+			$ctext = $entity->display_url;
+			$curl = $entity->expanded_url;
+			return "<span class=\"link urls\" onclick=\"new_tab_open('$curl')\">$ctext</span>";
+
 		case 'media':
 			return '';
+
 		}
+		
 		return '';
 	}
 
