@@ -1,8 +1,14 @@
 <?php
 namespace Twitter;
 	require_once __DIR__.'/../twitter/oauth_required.php';
+	require_once __DIR__.'/../base/urls.php';
 
-	$params = explode('/', strtok($_SERVER["REQUEST_URI"], '?'));
+	preg_match('@^https?://[^/]+(.*)@i', SITE_URL, $_url_matches);
+	$url_dirs_until_app = $_url_matches[1];
+	$url_dirs_in_app = substr(strtok($_SERVER["REQUEST_URI"], '?'), strlen($url_dirs_until_app)); 
+
+	$params = explode('/', url_dirs_in_app);
+	var_dump($params);
 
 	if($params[1] === '') {
 		$ret = $twitter->query(
